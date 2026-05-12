@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  background: #f7f8f4;
+  color: #1f2933;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+.app-shell {
+  min-height: calc(100vh - 56px);
+}
+
+.bg-library {
+  background: #173b3f;
+}
+
+.text-library {
+  color: #1f7a65;
+}
+
+.btn-library {
+  background: #1f7a65;
+  border-color: #1f7a65;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-library:hover,
+.btn-library:focus {
+  background: #185f50;
+  border-color: #185f50;
+  color: #fff;
+}
+
+.info-card,
+.library-panel {
+  background: #ffffff;
+  border: 1px solid #dce7de;
+  border-radius: 8px;
+  color: #1f2933;
+  box-shadow: 0 8px 22px rgba(23, 59, 63, 0.08);
+}
+
+.table-library th {
+  background: #173b3f;
+  color: #fff;
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #173b3f, #1f7a65 68%, #c45a3b);
+  color: #fff;
+}
+
+.card {
+  border-radius: 8px;
+  color: #1f2933;
+}
+
+.navbar-brand::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 2px;
+  background: #f0c36a;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+.nav-link.active {
+  color: #f0c36a !important;
+}
+
+.form-control {
+  border-color: #cfdbd3;
+}
+
+.form-control:focus {
+  border-color: #1f7a65;
+  box-shadow: 0 0 0 0.2rem rgba(31, 122, 101, 0.18);
+}
+
+.badge.text-bg-light {
+  background: #eef4ef !important;
+  border: 1px solid #dce7de;
+  color: #173b3f !important;
+  font-weight: 600;
+}

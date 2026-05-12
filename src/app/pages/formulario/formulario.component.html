@@ -1,0 +1,113 @@
+<section class="container py-5">
+  <div class="row g-4">
+    <div class="col-lg-4">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+          <p class="text-uppercase text-library fw-semibold mb-2">Pedido lector</p>
+          <h1 class="h3 fw-bold mb-2">Registrar un libro</h1>
+          <p class="text-secondary mb-4">Deja los datos tal como aparecerán en el registro.</p>
+
+          <div *ngIf="mensajeError" class="alert alert-danger" role="alert">
+            {{ mensajeError }}
+          </div>
+
+          <div *ngIf="mensajeExito" class="alert alert-success" role="alert">
+            {{ mensajeExito }}
+          </div>
+
+          <form (ngSubmit)="guardarSolicitud()">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre del lector</label>
+              <input
+                id="nombre"
+                name="nombre"
+                type="text"
+                class="form-control"
+                [(ngModel)]="solicitud.nombre"
+                placeholder="Ej: Ana Torres"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+            <div class="mb-3">
+              <label for="libro" class="form-label">Libro solicitado</label>
+              <input
+                id="libro"
+                name="libro"
+                type="text"
+                class="form-control"
+                [(ngModel)]="solicitud.libro"
+                placeholder="Ej: Cien años de soledad"
+                required
+              >
+            </div>
+
+            <div class="mb-4">
+              <label for="fecha" class="form-label">Fecha de solicitud</label>
+              <input
+                id="fecha"
+                name="fecha"
+                type="date"
+                class="form-control"
+                [(ngModel)]="solicitud.fecha"
+                required
+              >
+            </div>
+
+            <button type="submit" class="btn btn-library w-100">
+              Guardar pedido
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-4">
+          <div class="d-flex flex-column flex-md-row justify-content-between gap-2 mb-3">
+            <div>
+              <p class="text-uppercase text-library fw-semibold mb-2">Vista de datos</p>
+              <h2 class="h3 fw-bold mb-0">Pedidos de libros</h2>
+            </div>
+            <span class="badge text-bg-light align-self-md-center">
+              {{ solicitudes.length }} en registro
+            </span>
+          </div>
+
+          <div *ngIf="solicitudes.length === 0" class="alert alert-info mb-0" role="alert">
+            Todavía no hay pedidos guardados. El primero aparecerá aquí.
+          </div>
+
+          <div *ngIf="solicitudes.length > 0" class="table-responsive">
+            <table class="table table-striped table-hover align-middle mb-0">
+              <thead class="table-library">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Lector</th>
+                  <th scope="col">Libro pedido</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col" class="text-end">Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of solicitudes; let i = index">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{ item.nombre }}</td>
+                  <td>{{ item.libro }}</td>
+                  <td>{{ item.fecha }}</td>
+                  <td class="text-end">
+                    <button type="button" class="btn btn-sm btn-outline-danger" (click)="eliminarSolicitud(i)" aria-label="Eliminar pedido">
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
