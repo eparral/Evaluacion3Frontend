@@ -1,27 +1,69 @@
-# BibliotecaSolicitudes
+# Biblioteca Viva
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+Aplicación web hecha en Angular para registrar solicitudes de libros desde el rol de lector. La idea es mantener un registro simple, claro y fácil de revisar, sin depender de planillas externas o anotaciones sueltas.
 
-## Development server
+## Qué permite hacer
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Iniciar sesión como lector.
+- Registrar una solicitud con nombre, libro y fecha.
+- Ver todas las solicitudes guardadas en una tabla.
+- Eliminar pedidos que ya no correspondan.
+- Mantener los datos en `LocalStorage` del navegador.
 
-## Code scaffolding
+## Credenciales de prueba
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para entrar a la aplicación se puede usar:
 
-## Build
+```txt
+Usuario: lector
+Contraseña: 1234
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tecnologías usadas
 
-## Running unit tests
+- Angular 18
+- TypeScript
+- Bootstrap
+- Formularios con `ngModel`
+- Rutas con Angular Router
+- Persistencia local con `LocalStorage`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Cómo ejecutar el proyecto
 
-## Running end-to-end tests
+Primero instala las dependencias:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm install
+```
 
-## Further help
+Luego levanta el servidor de desarrollo:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm start
+```
+
+Abre el navegador en:
+
+```txt
+http://localhost:4200/
+```
+
+Si ese puerto está ocupado, Angular puede usar otro puerto disponible.
+
+## Comandos útiles
+
+Compilar el proyecto:
+
+```bash
+npm run build
+```
+
+Ejecutar pruebas unitarias:
+
+```bash
+npm test
+```
+
+## Nota
+
+Este proyecto fue desarrollado como evaluación frontend. Se priorizó una experiencia sencilla y ordenada para que cualquier lector pueda registrar sus pedidos sin pasos innecesarios.
