@@ -56,16 +56,6 @@ body {
   color: #1f2933;
 }
 
-.navbar-brand::before {
-  content: "";
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-right: 10px;
-  border-radius: 2px;
-  background: #f0c36a;
-}
-
 .nav-link {
   font-weight: 500;
 }

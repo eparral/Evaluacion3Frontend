@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-library shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-semibold" routerLink="/">
+    <a class="navbar-brand fw-semibold d-inline-flex align-items-center gap-2" routerLink="/">
+      <app-icon name="book" [size]="22"></app-icon>
       Biblioteca Viva
     </a>
 
@@ -19,17 +20,20 @@
     <div class="collapse navbar-collapse" id="navbarBiblioteca">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="nav-link d-inline-flex align-items-center gap-2" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <app-icon name="home" [size]="17"></app-icon>
             Inicio
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/solicitudes" routerLinkActive="active">
+          <a class="nav-link d-inline-flex align-items-center gap-2" routerLink="/solicitudes" routerLinkActive="active">
+            <app-icon name="clipboard-list" [size]="17"></app-icon>
             Mis solicitudes
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active">
+          <a class="nav-link d-inline-flex align-items-center gap-2" routerLink="/about" routerLinkActive="active">
+            <app-icon name="info" [size]="17"></app-icon>
             Proyecto
           </a>
         </li>

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { IconComponent } from '../../components/icon/icon.component';
 
 interface Solicitud {
   nombre: string;
@@ -11,7 +12,7 @@ interface Solicitud {
 @Component({
   selector: 'app-formulario',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, IconComponent],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.css'
 })

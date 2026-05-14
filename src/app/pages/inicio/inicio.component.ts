@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-inicio',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, IconComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css'
 })

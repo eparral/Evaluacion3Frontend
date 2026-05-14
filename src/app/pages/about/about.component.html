@@ -2,18 +2,36 @@
   <div class="container">
     <div class="row align-items-center g-4">
       <div class="col-lg-7">
-        <p class="text-uppercase fw-semibold mb-2">Biblioteca Digital</p>
-        <h1 class="display-6 fw-bold mb-3">Un proyecto simple, pensado para pedidos reales</h1>
+        <p class="text-uppercase fw-semibold mb-2 d-inline-flex align-items-center gap-2">
+          <app-icon name="book" [size]="18"></app-icon>
+          Biblioteca Digital
+        </p>
+        <h1 class="display-6 fw-bold mb-3 d-flex align-items-center gap-3">
+          <app-icon name="layers" [size]="34"></app-icon>
+          Un proyecto simple, pensado para pedidos reales
+        </h1>
         <p class="lead mb-0">
           Nació como una evaluación de frontend, pero está escrita como una herramienta cercana para una biblioteca que quiere ordenar solicitudes sin papel ni filas.
         </p>
       </div>
       <div class="col-lg-5">
         <div class="library-panel p-4">
-          <h2 class="h5 fw-bold mb-3">Ficha del proyecto</h2>
-          <p class="mb-1"><strong>Estudiante:</strong> Edgar Parra</p>
-          <p class="mb-1"><strong>Rol utilizado:</strong> Lector</p>
-          <p class="mb-0"><strong>Acción principal:</strong> Solicitud de libro</p>
+          <h2 class="h5 fw-bold mb-3 d-flex align-items-center gap-2">
+            <app-icon name="clipboard-list" [size]="22"></app-icon>
+            Ficha del proyecto
+          </h2>
+          <p class="mb-1 d-flex align-items-center gap-2">
+            <app-icon name="user" [size]="17"></app-icon>
+            <span><strong>Estudiante:</strong> Edgar Parra</span>
+          </p>
+          <p class="mb-1 d-flex align-items-center gap-2">
+            <app-icon name="lock" [size]="17"></app-icon>
+            <span><strong>Rol utilizado:</strong> Lector</span>
+          </p>
+          <p class="mb-0 d-flex align-items-center gap-2">
+            <app-icon name="book" [size]="17"></app-icon>
+            <span><strong>Acción principal:</strong> Solicitud de libro</span>
+          </p>
         </div>
       </div>
     </div>
@@ -25,7 +43,10 @@
     <div class="col-md-4">
       <div class="card h-100 border-0 shadow-sm">
         <div class="card-body p-4">
-          <h2 class="h5 fw-bold text-library">Qué resuelve</h2>
+          <h2 class="h5 fw-bold text-library d-flex align-items-center gap-2">
+            <app-icon name="check-circle" [size]="22"></app-icon>
+            Qué resuelve
+          </h2>
           <p class="text-secondary mb-0">
             Ayuda a que cada lector deje su pedido con nombre, libro y fecha, sin depender de anotaciones sueltas.
           </p>
@@ -36,7 +57,10 @@
     <div class="col-md-4">
       <div class="card h-100 border-0 shadow-sm">
         <div class="card-body p-4">
-          <h2 class="h5 fw-bold text-library">Cómo se usa</h2>
+          <h2 class="h5 fw-bold text-library d-flex align-items-center gap-2">
+            <app-icon name="log-in" [size]="22"></app-icon>
+            Cómo se usa
+          </h2>
           <p class="text-secondary mb-0">
             El lector ingresa, registra un libro y lo ve inmediatamente en una tabla limpia para revisar o eliminar pedidos.
           </p>
@@ -47,7 +71,10 @@
     <div class="col-md-4">
       <div class="card h-100 border-0 shadow-sm">
         <div class="card-body p-4">
-          <h2 class="h5 fw-bold text-library">Base técnica</h2>
+          <h2 class="h5 fw-bold text-library d-flex align-items-center gap-2">
+            <app-icon name="layers" [size]="22"></app-icon>
+            Base técnica
+          </h2>
           <p class="text-secondary mb-0">
             Está desarrollada en Angular 18 con componentes standalone, rutas, formularios, LocalStorage y Bootstrap.
           </p>

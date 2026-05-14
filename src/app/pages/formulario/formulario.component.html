@@ -3,8 +3,14 @@
     <div class="col-lg-4">
       <div class="card border-0 shadow-sm">
         <div class="card-body p-4">
-          <p class="text-uppercase text-library fw-semibold mb-2">Pedido lector</p>
-          <h1 class="h3 fw-bold mb-2">Registrar un libro</h1>
+          <p class="text-uppercase text-library fw-semibold mb-2 d-inline-flex align-items-center gap-2">
+            <app-icon name="clipboard-list" [size]="18"></app-icon>
+            Pedido lector
+          </p>
+          <h1 class="h3 fw-bold mb-2 d-flex align-items-center gap-2">
+            <app-icon name="book" [size]="24"></app-icon>
+            Registrar un libro
+          </h1>
           <p class="text-secondary mb-4">Deja los datos tal como aparecerán en el registro.</p>
 
           <div *ngIf="mensajeError" class="alert alert-danger" role="alert">
@@ -17,7 +23,10 @@
 
           <form #solicitudForm="ngForm" (ngSubmit)="guardarSolicitud(solicitudForm)" novalidate>
             <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre del lector</label>
+              <label for="nombre" class="form-label d-inline-flex align-items-center gap-2">
+                <app-icon name="user" [size]="17"></app-icon>
+                Nombre del lector
+              </label>
               <input
                 id="nombre"
                 name="nombre"
@@ -31,7 +40,10 @@
             </div>
 
             <div class="mb-3">
-              <label for="libro" class="form-label">Libro solicitado</label>
+              <label for="libro" class="form-label d-inline-flex align-items-center gap-2">
+                <app-icon name="book" [size]="17"></app-icon>
+                Libro solicitado
+              </label>
               <input
                 id="libro"
                 name="libro"
@@ -44,7 +56,10 @@
             </div>
 
             <div class="mb-4">
-              <label for="fecha" class="form-label">Fecha de solicitud</label>
+              <label for="fecha" class="form-label d-inline-flex align-items-center gap-2">
+                <app-icon name="calendar" [size]="17"></app-icon>
+                Fecha de solicitud
+              </label>
               <input
                 id="fecha"
                 name="fecha"
@@ -70,7 +85,10 @@
             </div>
 
             <button type="submit" class="btn btn-library w-100">
-              Guardar pedido
+              <span class="d-inline-flex align-items-center justify-content-center gap-2">
+                <app-icon name="save" [size]="18"></app-icon>
+                Guardar pedido
+              </span>
             </button>
           </form>
         </div>
@@ -82,10 +100,17 @@
         <div class="card-body p-4">
           <div class="d-flex flex-column flex-md-row justify-content-between gap-2 mb-3">
             <div>
-              <p class="text-uppercase text-library fw-semibold mb-2">Vista de datos</p>
-              <h2 class="h3 fw-bold mb-0">Pedidos de libros</h2>
+              <p class="text-uppercase text-library fw-semibold mb-2 d-inline-flex align-items-center gap-2">
+                <app-icon name="layers" [size]="18"></app-icon>
+                Vista de datos
+              </p>
+              <h2 class="h3 fw-bold mb-0 d-flex align-items-center gap-2">
+                <app-icon name="clipboard-list" [size]="24"></app-icon>
+                Pedidos de libros
+              </h2>
             </div>
-            <span class="badge text-bg-light align-self-md-center">
+            <span class="badge text-bg-light align-self-md-center d-inline-flex align-items-center gap-2">
+              <app-icon name="check-circle" [size]="16"></app-icon>
               {{ solicitudes.length }} en registro
             </span>
           </div>
@@ -113,7 +138,10 @@
                   <td>{{ item.fecha }}</td>
                   <td class="text-end">
                     <button type="button" class="btn btn-sm btn-outline-danger" (click)="eliminarSolicitud(i)" aria-label="Eliminar pedido">
-                      Eliminar
+                      <span class="d-inline-flex align-items-center gap-1">
+                        <app-icon name="trash" [size]="15"></app-icon>
+                        Eliminar
+                      </span>
                     </button>
                   </td>
                 </tr>
