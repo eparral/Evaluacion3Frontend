@@ -15,7 +15,7 @@
             {{ mensajeExito }}
           </div>
 
-          <form (ngSubmit)="guardarSolicitud()">
+          <form #solicitudForm="ngForm" (ngSubmit)="guardarSolicitud(solicitudForm)" novalidate>
             <div class="mb-3">
               <label for="nombre" class="form-label">Nombre del lector</label>
               <input
@@ -51,8 +51,22 @@
                 type="date"
                 class="form-control"
                 [(ngModel)]="solicitud.fecha"
+                #fechaInput="ngModel"
+                [max]="fechaMaxima"
+                [class.is-invalid]="(fechaInput.invalid || fechaFueraDelAnioActual()) && (fechaInput.touched || solicitudForm.submitted)"
+                aria-describedby="fechaError"
                 required
               >
+              <div
+                id="fechaError"
+                class="invalid-feedback d-block"
+                *ngIf="(fechaInput.invalid || fechaFueraDelAnioActual()) && (fechaInput.touched || solicitudForm.submitted)"
+              >
+                <span *ngIf="fechaInput.errors?.['required']">Selecciona una fecha.</span>
+                <span *ngIf="!fechaInput.errors?.['required'] && fechaFueraDelAnioActual()">
+                  La fecha no puede ser mayor al año actual.
+                </span>
+              </div>
             </div>
 
             <button type="submit" class="btn btn-library w-100">

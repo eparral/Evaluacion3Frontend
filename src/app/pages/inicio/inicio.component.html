@@ -34,7 +34,7 @@
             {{ mensajeError }}
           </div>
 
-          <form (ngSubmit)="iniciarSesion()">
+          <form #loginForm="ngForm" (ngSubmit)="iniciarSesion(loginForm)" novalidate>
             <div class="mb-3">
               <label for="usuario" class="form-label">Usuario</label>
               <input
@@ -43,10 +43,33 @@
                 type="text"
                 class="form-control"
                 [(ngModel)]="usuario"
+                #usuarioInput="ngModel"
                 placeholder="lector"
                 autocomplete="username"
+                [minlength]="usuarioMinLength"
+                [maxlength]="usuarioMaxLength"
+                [pattern]="usuarioPattern"
+                [class.is-invalid]="usuarioInput.invalid && (usuarioInput.touched || loginForm.submitted)"
+                aria-describedby="usuarioError"
+                title="El usuario solo puede contener letras"
                 required
               >
+              <div
+                id="usuarioError"
+                class="invalid-feedback d-block"
+                *ngIf="usuarioInput.invalid && (usuarioInput.touched || loginForm.submitted)"
+              >
+                <span *ngIf="usuarioInput.errors?.['required']">Ingresa un usuario.</span>
+                <span *ngIf="!usuarioInput.errors?.['required'] && usuarioInput.errors?.['pattern']">
+                  El usuario solo puede contener letras.
+                </span>
+                <span *ngIf="!usuarioInput.errors?.['required'] && !usuarioInput.errors?.['pattern'] && usuarioInput.errors?.['minlength']">
+                  El usuario debe tener al menos 3 caracteres.
+                </span>
+                <span *ngIf="!usuarioInput.errors?.['required'] && !usuarioInput.errors?.['pattern'] && usuarioInput.errors?.['maxlength']">
+                  El usuario no puede superar los 30 caracteres.
+                </span>
+              </div>
             </div>
 
             <div class="mb-4">
